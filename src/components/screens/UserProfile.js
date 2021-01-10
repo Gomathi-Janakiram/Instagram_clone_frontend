@@ -17,6 +17,7 @@ const Profile = () => {
             .then(result => {
                 console.log(result)
                 setuserprofile(result)
+                console.log(state)
             })
     }, [])
 
@@ -61,7 +62,7 @@ const Profile = () => {
             dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
             localStorage.setItem("user",JSON.stringify(data))
             setuserprofile(prevState=>{
-                const newFollower=prevState.user.followers.filter(item=>item!=data._id)
+                const newFollower=prevState.user.followers.filter(item=>item!==data._id)
                 return{
                     ...prevState,
                     user:{...prevState.user,followers:newFollower}
@@ -79,7 +80,7 @@ const Profile = () => {
                 <div style={{ maxWidth: "550px", margin: "0px auto" }}>
                     <div style={{ display: "flex", justifyContent: "space-around", margin: "18px 0px", borderBottom: "1px solid grey" }}>
                         <div>
-                            <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
+                            <img style={{ width: "160px", height: "160px", borderRadius: "80px" }} alt="pic1" 
                                 src="https://images.unsplash.com/photo-1469259943454-aa100abba749?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
                             />
                         </div>
@@ -100,7 +101,7 @@ const Profile = () => {
                     </div>
                     <div className="gallery">
                         {userprofile.posts.map(item => (
-                            <img key={item._id} className="item" src={item.photo} />
+                            <img key={item._id} className="item" src={item.photo} alt="pic" />
                         ))}
                     </div>
                 </div> :<h4>loading.........!</h4>

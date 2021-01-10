@@ -35,6 +35,7 @@ const Signin = () => {
                     dispatch({type:"USER",payload:data.user})
                     M.toast({ html: "SignedIn successfull", classes: "#00e676 green accent-3" })
                     history.push("/")
+                    console.log(state)
                 }
             }).catch(err=>{
                 console.log(err)

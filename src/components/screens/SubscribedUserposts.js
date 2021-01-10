@@ -15,6 +15,7 @@ const Home = () => {
             .then(result => {
                 setData(result.posts)
                 console.log(data)
+                console.log(dispatch)
             })
     }, [])
 
@@ -124,13 +125,13 @@ const Home = () => {
         <div className="home">
             {data.map(item => (
                 <div className="card home-card" key={item._id} >
-                    <h5 style={{padding:"5px"}}><Link to={item.postedBy._id!==state._id ?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link> {item.postedBy._id==state._id && 
+                    <h5 style={{padding:"5px"}}><Link to={item.postedBy._id!==state._id ?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link> {item.postedBy._id===state._id && 
                     <i className="material-icons" style={{ float:"right" }}
                     onClick={()=>deletepost(item._id)}>delete</i>}
                        
                     </h5>
                     <div className="card-image">
-                        <img src={item.photo} />
+                        <img src={item.photo} alt="pic5" />
                     </div>
                     <div className="card-content">
                         <i className="material-icons" style={{ color: "red" }}>favorite</i>

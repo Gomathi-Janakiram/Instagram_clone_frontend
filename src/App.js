@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer,useContext } from "react"
-import { BrowserRouter, Route, Switch, useHistory, useParams } from "react-router-dom"
+import { BrowserRouter, Route, Switch, useHistory} from "react-router-dom"
 import NavBar from "./components/Navbar"
 import "./App.css"
 import Home from "./components/screens/Home"
@@ -19,6 +19,7 @@ const Routing = () => {
   useEffect(()=>{
       const user=JSON.parse(localStorage.getItem("user"))
       if(user){
+        console.log(state)
         dispatch({type:"USER",payload:user})
       }else{
         history.push("/signin")
