@@ -17,7 +17,8 @@ const Home = () => {
                 console.log(data)
                 console.log(dispatch)
             })
-    }, [])
+        // eslint-disable-next-line
+    },[])
 
     const likePost = (id) => {
         fetch("https://afternoon-tundra-00775.herokuapp.com/like", {

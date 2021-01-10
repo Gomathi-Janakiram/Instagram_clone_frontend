@@ -19,7 +19,8 @@ const Profile = () => {
                 setuserprofile(result)
                 console.log(state)
             })
-    }, [])
+            // eslint-disable-next-line
+    },[])
 
     const FollowUser=()=>{
         fetch("https://afternoon-tundra-00775.herokuapp.com/follow",{

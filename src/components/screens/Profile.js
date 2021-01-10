@@ -14,6 +14,7 @@ const Profile=()=>{
             setMypics(result.mypost)
             console.log(dispatch)
         })
+        // eslint-disable-next-line
     },[])
     return(
         <div style={{maxWidth:"550px",margin:"0px auto"}}>

@@ -31,7 +31,8 @@ const CreatePost = () => {
         if (url) {
             postBackend()
         }
-    }, [url])
+        // eslint-disable-next-line
+    },[url])
 
     const postBackend = () => {
         fetch("https://afternoon-tundra-00775.herokuapp.com/createpost", {
