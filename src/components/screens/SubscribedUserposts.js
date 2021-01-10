@@ -7,7 +7,7 @@ const Home = () => {
     const { state, dispatch } = useContext(userContext)
 
     useEffect(() => {
-        fetch("http://localhost:5000/getsubpost", {
+        fetch("https://afternoon-tundra-00775.herokuapp.com/getsubpost", {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             }
@@ -19,7 +19,7 @@ const Home = () => {
     }, [])
 
     const likePost = (id) => {
-        fetch("http://localhost:5000/like", {
+        fetch("https://afternoon-tundra-00775.herokuapp.com/like", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const Home = () => {
     }
 
     const UnlikePost = (id) => {
-        fetch("http://localhost:5000/unlike", {
+        fetch("https://afternoon-tundra-00775.herokuapp.com/unlike", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const Home = () => {
     }
 
     const makeComment = (text, postId) => {
-        fetch("http://localhost:5000/comment", {
+        fetch("https://afternoon-tundra-00775.herokuapp.com/comment", {
             method: "put",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt"),
@@ -104,7 +104,7 @@ const Home = () => {
     }
 
     const deletepost = (postId) => {
-        fetch(`http://localhost:5000/deletepost/${postId}`, {
+        fetch(`https://afternoon-tundra-00775.herokuapp.com/deletepost/${postId}`, {
             method: "delete",
             headers: {
                 "Authorization": "Bearer "+localStorage.getItem("jwt")

@@ -34,7 +34,7 @@ const CreatePost = () => {
     }, [url])
 
     const postBackend = () => {
-        fetch("http://localhost:5000/createpost", {
+        fetch("https://afternoon-tundra-00775.herokuapp.com/createpost", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

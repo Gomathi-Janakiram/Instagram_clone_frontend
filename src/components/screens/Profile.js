@@ -5,7 +5,7 @@ const Profile=()=>{
     const [mypics,setMypics]=useState([])
     const {state,dispatch}=useContext(userContext)
     useEffect(()=>{
-        fetch("http://localhost:5000/mypost",{
+        fetch("https://afternoon-tundra-00775.herokuapp.com/mypost",{
             headers:{
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
             }
